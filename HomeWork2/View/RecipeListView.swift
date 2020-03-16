@@ -20,7 +20,7 @@ struct RecipeListView: View {
         NavigationView {
             List(viewModel.items) { item in
                 VStack(alignment: .leading) {
-                    RowView(item: item)
+                    RowView(viewModel: self.viewModel, item: item)
                     .onAppear() {
                         if self.viewModel.items.isLast(item) {
                             self.viewModel.loadPage()

@@ -12,17 +12,19 @@ struct RootView: View {
     @EnvironmentObject var viewModel: RootViewModel
 
     var body: some View {
-        VStack(alignment: .leading) {
-            SelectRequestView()
+        NavControllerView(transition: .custom(.scale)) {
+            VStack(alignment: .leading) {
+                SelectRequestView()
 
-            if (viewModel.selectedItem != nil) {
-                RecipeListView(viewModel: RecipeViewModel(recipeRequest: viewModel.selectedItem!))
-            } else {
-                List {
-                    EmptyView()
+                if (self.viewModel.selectedItem != nil) {
+                    RecipeListView(viewModel: RecipeViewModel(recipeRequest: self.viewModel.selectedItem!))
+                } else {
+                    List {
+                        EmptyView()
+                    }
                 }
+                
             }
-            
         }
     }
 }

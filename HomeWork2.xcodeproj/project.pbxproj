@@ -14,6 +14,9 @@
 		3014966C241FFF8A00E11968 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014966B241FFF8A00E11968 /* RecipeListView.swift */; };
 		3014966E241FFFC000E11968 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014966D241FFFC000E11968 /* RowView.swift */; };
 		301496712420009D00E11968 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301496702420009D00E11968 /* HelperExtensions.swift */; };
+		301496732420276100E11968 /* NavControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301496722420276100E11968 /* NavControllerView.swift */; };
+		301496752420286100E11968 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301496742420286100E11968 /* RecipeView.swift */; };
+		3014967724202C9500E11968 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014967624202C9500E11968 /* URLImage.swift */; };
 		306C0B66241EACB500AF1559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B65241EACB500AF1559 /* AppDelegate.swift */; };
 		306C0B68241EACB500AF1559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B67241EACB500AF1559 /* SceneDelegate.swift */; };
 		306C0B6A241EACB500AF1559 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B69241EACB500AF1559 /* RootView.swift */; };
@@ -46,6 +49,9 @@
 		3014966B241FFF8A00E11968 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		3014966D241FFFC000E11968 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		301496702420009D00E11968 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		301496722420276100E11968 /* NavControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavControllerView.swift; sourceTree = "<group>"; };
+		301496742420286100E11968 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		3014967624202C9500E11968 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		306C0B62241EACB500AF1559 /* HomeWork2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		306C0B65241EACB500AF1559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		306C0B67241EACB500AF1559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 				30149667241FFD0B00E11968 /* SelectRequestView.swift */,
 				3014966B241FFF8A00E11968 /* RecipeListView.swift */,
 				3014966D241FFFC000E11968 /* RowView.swift */,
+				301496722420276100E11968 /* NavControllerView.swift */,
+				301496742420286100E11968 /* RecipeView.swift */,
+				3014967624202C9500E11968 /* URLImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 				30149668241FFD0B00E11968 /* SelectRequestView.swift in Sources */,
 				300730F5241FEB8200AAFB5B /* RecipeRequestModel.swift in Sources */,
 				306C0B9A241ECC8F00AF1559 /* ErrorModel.swift in Sources */,
+				3014967724202C9500E11968 /* URLImage.swift in Sources */,
 				306C0B95241ECC8F00AF1559 /* RecipeAPI.swift in Sources */,
 				306C0B98241ECC8F00AF1559 /* OpenISO8601DateFormatter.swift in Sources */,
 				306C0B9B241ECC8F00AF1559 /* RecipeList.swift in Sources */,
@@ -306,6 +316,8 @@
 				306C0BA1241ECC8F00AF1559 /* Configuration.swift in Sources */,
 				306C0B6A241EACB500AF1559 /* RootView.swift in Sources */,
 				301496712420009D00E11968 /* HelperExtensions.swift in Sources */,
+				301496752420286100E11968 /* RecipeView.swift in Sources */,
+				301496732420276100E11968 /* NavControllerView.swift in Sources */,
 				306C0BA0241ECC8F00AF1559 /* SynchronizedDictionary.swift in Sources */,
 				3014966C241FFF8A00E11968 /* RecipeListView.swift in Sources */,
 				3014966E241FFFC000E11968 /* RowView.swift in Sources */,
