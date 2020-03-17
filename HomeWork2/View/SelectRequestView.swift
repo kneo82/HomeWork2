@@ -21,7 +21,7 @@ struct SelectRequestView: View {
                                 .foregroundColor(.green)
                         } else {
                             RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.blue)
+                                .foregroundColor(.blue)
                         }
                         VStack {
                             Text(item.title)

@@ -12,31 +12,56 @@ struct RecipeView: View {
     let recipe: Recipe
     
     var body: some View {
-        VStack(alignment: .leading) {
-            NavPopButton(destination: .previous) {
-                Text("< Back")
-            }
-            
-            
-            Text(recipe.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
-                .font(.title)
-            Spacer()
-            Text(recipe.ingredients ?? "")
-            
-            NavPushButton(destination: RecipeView(recipe: self.recipe)) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
+        VStack {
+            HStack {
+                NavPopButton(destination: .previous) {
+                    Text("< Back")
+                        .font(.subheadline)
                         .foregroundColor(.blue)
                     
-                        Text("Next >")
-                            .font(.headline)
+                    Spacer()
+                    
+                    NavPushButton(destination: RecipeProccessView(recipe: self.recipe)) {
+                        Text("Recipe >")
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                    }
                 }
-                .frame(width: 150, height: 33, alignment: .center)
-                
             }
+            .padding(20)
             
-            Spacer()
+            VStack(alignment: .center) {
+                URLImage(imageUrl: recipe.thumbnail ?? "")
+                Text(recipe.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
+                    .font(.title)
+            }
+            .padding(20)
+            
+            List(self.ingredients()) { item in
+                Text(item)
+            }
+        }
+    }
+    
+    private func ingredients() -> [String] {
+        if let ingredients = recipe.ingredients {
+           return ingredients.split(separator: ",").map {
+                String($0)
+            }
+        } else {
+            return [""]
         }
     }
 }
 
+
+/*
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */

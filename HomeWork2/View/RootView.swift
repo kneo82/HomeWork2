@@ -10,12 +10,12 @@ import SwiftUI
 
 struct RootView: View {
     @EnvironmentObject var viewModel: RootViewModel
-
+    
     var body: some View {
-        NavControllerView(transition: .custom(.scale)) {
+        NavControllerView(transition: .custom(.opacity)) {
             VStack(alignment: .leading) {
                 SelectRequestView()
-
+                
                 if (self.viewModel.selectedItem != nil) {
                     RecipeListView(viewModel: RecipeViewModel(recipeRequest: self.viewModel.selectedItem!))
                 } else {
@@ -23,7 +23,6 @@ struct RootView: View {
                         EmptyView()
                     }
                 }
-                
             }
         }
     }
@@ -32,6 +31,6 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
-        .environmentObject(RootViewModel())
+            .environmentObject(RootViewModel())
     }
 }
