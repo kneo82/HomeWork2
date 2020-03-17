@@ -51,7 +51,7 @@ struct NavPushButton<Label, Destination>: View where Label: View, Destination: V
     
     private let destination: Destination
     private let label: () -> Label
-
+    
     init(destination: Destination, @ViewBuilder label: @escaping () -> Label) {
         self.destination = destination
         self.label = label

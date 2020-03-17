@@ -9,25 +9,40 @@
 import SwiftUI
 
 struct RecipeProccessView: View {
-    let recipe: Recipe
+    @ObservedObject var viewModel: CookRecipeModel
     
     var body: some View {
-        HStack {
-            NavPopButton(destination: .previous) {
-                Text("< Back")
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
-                
-                Spacer()
-                
-                NavPopButton(destination: .root) {
-                    Text("To Root View")
+        VStack {
+            HStack {
+                NavPopButton(destination: .previous) {
+                    Text("< Back")
                         .font(.subheadline)
                         .foregroundColor(.blue)
+                    
+                    Spacer()
+                    
+                    NavPopButton(destination: .root) {
+                        Text("To Root View")
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                    }
                 }
             }
+            .padding(20)
+            
+            if self.viewModel.parsedRecipe == nil {
+                Spacer()
+                Text("Loading...")
+                Spacer()
+            } else {
+                Text(self.viewModel.parsedRecipe?.title ?? "Not Found")
+                    .font(.title)
+                    .padding(20)
+                Text(self.viewModel.parsedRecipe?.instructions ?? "Not Found")
+                    .font(.body)
+                    .padding(20)
+                Spacer()
+            }
         }
-        .padding(20)
-        
     }
 }

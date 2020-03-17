@@ -21,7 +21,7 @@ struct RecipeView: View {
                     
                     Spacer()
                     
-                    NavPushButton(destination: RecipeProccessView(recipe: self.recipe)) {
+                    NavPushButton(destination: RecipeProccessView(viewModel: CookRecipeModel(recipe: self.recipe))) {
                         Text("Recipe >")
                             .font(.subheadline)
                             .foregroundColor(.blue)
@@ -45,7 +45,7 @@ struct RecipeView: View {
     
     private func ingredients() -> [String] {
         if let ingredients = recipe.ingredients {
-           return ingredients.split(separator: ",").map {
+            return ingredients.split(separator: ",").map {
                 String($0)
             }
         } else {
@@ -53,15 +53,3 @@ struct RecipeView: View {
         }
     }
 }
-
-
-/*
- 
- 
- 
- 
- 
- 
- 
- 
- */
