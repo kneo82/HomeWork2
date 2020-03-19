@@ -32,6 +32,7 @@
 		3014991D242180A700E11968 /* ParserecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014991C242180A700E11968 /* ParserecipeAPI.swift */; };
 		30149921242180C300E11968 /* ParsedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014991F242180C200E11968 /* ParsedRecipe.swift */; };
 		30149924242180DA00E11968 /* NutrilonAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149923242180DA00E11968 /* NutrilonAPIs.swift */; };
+		30226764242338E3003274C4 /* RecipeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30226763242338E3003274C4 /* RecipeImageView.swift */; };
 		306C0B66241EACB500AF1559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B65241EACB500AF1559 /* AppDelegate.swift */; };
 		306C0B68241EACB500AF1559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B67241EACB500AF1559 /* SceneDelegate.swift */; };
 		306C0B6A241EACB500AF1559 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B69241EACB500AF1559 /* RootView.swift */; };
@@ -73,6 +74,7 @@
 		3014991C242180A700E11968 /* ParserecipeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserecipeAPI.swift; sourceTree = "<group>"; };
 		3014991F242180C200E11968 /* ParsedRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedRecipe.swift; sourceTree = "<group>"; };
 		30149923242180DA00E11968 /* NutrilonAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutrilonAPIs.swift; sourceTree = "<group>"; };
+		30226763242338E3003274C4 /* RecipeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImageView.swift; sourceTree = "<group>"; };
 		306C0B62241EACB500AF1559 /* HomeWork2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		306C0B65241EACB500AF1559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		306C0B67241EACB500AF1559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				3014966D241FFFC000E11968 /* RowView.swift */,
 				301496742420286100E11968 /* RecipeView.swift */,
 				301496782420D86700E11968 /* RecipeProccessView.swift */,
+				30226763242338E3003274C4 /* RecipeImageView.swift */,
 				3014967624202C9500E11968 /* URLImage.swift */,
 				301496722420276100E11968 /* NavControllerView.swift */,
 			);
@@ -357,6 +360,7 @@
 			files = (
 				30149921242180C300E11968 /* ParsedRecipe.swift in Sources */,
 				301496E22421122800E11968 /* OpenISO8601DateFormatter.swift in Sources */,
+				30226764242338E3003274C4 /* RecipeImageView.swift in Sources */,
 				301496EB2421122800E11968 /* SynchronizedDictionary.swift in Sources */,
 				306C0B93241ECC8F00AF1559 /* APIHelper.swift in Sources */,
 				306C0B97241ECC8F00AF1559 /* RecipepuppyAPIs.swift in Sources */,

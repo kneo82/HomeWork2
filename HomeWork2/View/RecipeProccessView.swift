@@ -19,10 +19,16 @@ struct RecipeProccessView: View {
                         .font(.subheadline)
                         .foregroundColor(.blue)
                     
+                    
                     Spacer()
                     
-                    NavPopButton(destination: .root) {
-                        Text("To Root View")
+                    Text("Proccess")
+                        .font(.subheadline)
+                    
+                    Spacer()
+                    
+                    NavPushButton(destination: RecipeImageView(imagePath: self.viewModel.parsedRecipe?.image)) {
+                        Text("Image >")
                             .font(.subheadline)
                             .foregroundColor(.blue)
                     }

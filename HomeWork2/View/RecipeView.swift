@@ -18,6 +18,10 @@ struct RecipeView: View {
                     Text("< Back")
                         .font(.subheadline)
                         .foregroundColor(.blue)
+                    Spacer()
+                    
+                    Text("Ingredients")
+                        .font(.subheadline)
                     
                     Spacer()
                     
@@ -31,7 +35,6 @@ struct RecipeView: View {
             .padding(20)
             
             VStack(alignment: .center) {
-                URLImage(imageUrl: recipe.thumbnail ?? "")
                 Text(recipe.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
                     .font(.title)
             }
