@@ -9,24 +9,21 @@
 import SwiftUI
 
 struct RowView: View {
-    @EnvironmentObject var viewModel: RecipeViewModel
+    @ObservedObject var viewModel: RecipeViewModel
     
     let item: Recipe
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(item.title ?? "")
-                .font(.headline)
-            
-            Text(item.ingredients ?? "")
-                .font(.body)
-                .foregroundColor(.gray)
-            
-//            if self.viewModel.isPageLoading && self.viewModel.items.isLast(item) {
-//                Divider()
-//                Text("Loading...")
-//                    .padding(.vertical)
-//            }
+            NavPushButton(destination: RecipeView(recipe: item)) {
+                Text(self.item.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
+                    .font(.title)
+            }
+            if self.viewModel.isPageLoading && self.viewModel.items.isLast(item) {
+                Divider()
+                Text("Loading...")
+                    .padding(.vertical)
+            }
         }
     }
 }
