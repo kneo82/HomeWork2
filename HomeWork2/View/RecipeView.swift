@@ -8,6 +8,7 @@
 
 import SwiftUI
 import RecipePuppyAPI
+import UIComponents
 
 struct RecipeView: View {
     let recipe: Recipe

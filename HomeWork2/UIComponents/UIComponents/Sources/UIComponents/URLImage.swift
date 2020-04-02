@@ -9,14 +9,15 @@
 import SwiftUI
 import Combine
 
-struct URLImage: View {
+@available(iOS 13.0, *)
+public struct URLImage: View {
     @ObservedObject var imageURL: RemoteImageURL
     
-    init(imageUrl: String) {
+    public init(imageUrl: String) {
         self.imageURL = RemoteImageURL(imageURL: imageUrl)
     }
     
-    var body: some View {
+    public var body: some View {
         if imageURL.data.isEmpty {
             return Image(systemName: "photo")
                 .resizable()

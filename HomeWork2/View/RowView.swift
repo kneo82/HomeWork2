@@ -8,6 +8,7 @@
 
 import SwiftUI
 import RecipePuppyAPI
+import UIComponents
 
 struct RowView: View {
     @ObservedObject var viewModel: RecipeViewModel
@@ -16,7 +17,7 @@ struct RowView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            NavPushButton(destination: RecipeView(recipe: item)) {
+            UIComponents.NavPushButton(destination: RecipeView(recipe: item)) {
                 Text(self.item.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
                     .font(.title)
             }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIComponents
 
 struct RecipeImageView: View {
     let imagePath: String?

@@ -8,13 +8,14 @@
 
 import SwiftUI
 
-struct NavControllerView<Content>: View where Content: View {
+@available(iOS 13.0, *)
+public struct NavControllerView<Content>: View where Content: View {
     @ObservedObject private var viewModel: NavControllerViewModel
     
     private let content: Content
     private let transition: (push: AnyTransition, pop: AnyTransition)
     
-    init(transition: NavTransition, easing: Animation = .easeOut(duration: 0.3), @ViewBuilder content: @escaping () -> Content) {
+    public init(transition: NavTransition, easing: Animation = .easeOut(duration: 0.3), @ViewBuilder content: @escaping () -> Content) {
         self.viewModel = NavControllerViewModel(easing: easing)
         self.content = content()
         
@@ -26,7 +27,7 @@ struct NavControllerView<Content>: View where Content: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         let isRoot = viewModel.currentScreen == nil
         
         return ZStack {
@@ -45,19 +46,20 @@ struct NavControllerView<Content>: View where Content: View {
     }
 }
 
-struct NavPushButton<Label, Destination>: View where Label: View, Destination: View {
+@available(iOS 13.0, *)
+public struct NavPushButton<Label, Destination>: View where Label: View, Destination: View {
     
     @EnvironmentObject private var viewModel: NavControllerViewModel
     
     private let destination: Destination
     private let label: () -> Label
     
-    init(destination: Destination, @ViewBuilder label: @escaping () -> Label) {
+    public init(destination: Destination, @ViewBuilder label: @escaping () -> Label) {
         self.destination = destination
         self.label = label
     }
     
-    var body: some View {
+    public var body: some View {
         return label().onTapGesture {
             self.push()
         }
@@ -68,19 +70,20 @@ struct NavPushButton<Label, Destination>: View where Label: View, Destination: V
     }
 }
 
-struct NavPopButton<Label>: View where Label: View {
+@available(iOS 13.0, *)
+public struct NavPopButton<Label>: View where Label: View {
     
     @EnvironmentObject private var viewModel: NavControllerViewModel
     
     private let destination: PopDestination
     private let label: () -> Label
     
-    init(destination: PopDestination, @ViewBuilder label: @escaping () -> Label) {
+    public init(destination: PopDestination, @ViewBuilder label: @escaping () -> Label) {
         self.destination = destination
         self.label = label
     }
     
-    var body: some View {
+    public var body: some View {
         return label().onTapGesture {
             self.pop()
         }
@@ -93,17 +96,17 @@ struct NavPopButton<Label>: View where Label: View {
 
 // Enums
 
-enum NavTransition {
+public enum NavTransition {
     case none
     case custom(AnyTransition)
 }
 
-enum NavType {
+public enum NavType {
     case push
     case pop
 }
 
-enum PopDestination {
+public enum PopDestination {
     case previous
     case root
 }

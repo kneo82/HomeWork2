@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIComponents
 
 struct RecipeProccessView: View {
     @ObservedObject var viewModel: CookRecipeModel
