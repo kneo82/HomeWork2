@@ -20,7 +20,6 @@ struct RecipeProccessView: View {
                         .font(.subheadline)
                         .foregroundColor(.blue)
                     
-                    
                     Spacer()
                     
                     Text("Proccess")

@@ -17,13 +17,14 @@ extension Recipe: Identifiable {
 
 final class RecipeViewModel: ObservableObject {
     @Published private(set) var items: [Recipe] = [Recipe]()
-    @Published private(set) var page: Int = 0
     @Published private(set) var isPageLoading: Bool = false
     
+    private var serviceLocator: ServiceLocator?
     private let request: RecipeRequestModel
     
-    init(recipeRequest: RecipeRequestModel) {
+    init(serviceLocator: ServiceLocator?, recipeRequest: RecipeRequestModel) {
         self.request = recipeRequest
+        self.serviceLocator = serviceLocator
     }
     
     func loadPage() {
@@ -32,13 +33,12 @@ final class RecipeViewModel: ObservableObject {
         }
         
         isPageLoading = true
-        page += 1
         
-        RecipeAPI.getRecipe(i: request.ingridients, q: request.query, p: page) { responce, error in
-            if let results = responce?.results {
-                self.items.append(contentsOf: results)
-                self.isPageLoading = false
-            }
+        if let service = serviceLocator?.getServiceOf(GetRecipeListService.self)  {
+            service.getNextPageRecipe(ingridients: request.ingridients, query: request.query, handler: { [weak self] recipes in
+                self?.items.append(contentsOf: recipes)
+                self?.isPageLoading = false
+            })
         }
     }
 }

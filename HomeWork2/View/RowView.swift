@@ -7,21 +7,18 @@
 //
 
 import SwiftUI
-import RecipePuppyAPI
 import UIComponents
 
 struct RowView: View {
-    @ObservedObject var viewModel: RecipeViewModel
-    
-    let item: Recipe
+    @ObservedObject var viewModel: RowViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            UIComponents.NavPushButton(destination: RecipeView(recipe: item)) {
-                Text(self.item.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
+            UIComponents.NavPushButton(destination: RecipeView(recipe: self.viewModel.item)) {
+                Text(self.viewModel.item.title?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
                     .font(.title)
             }
-            if self.viewModel.isPageLoading && self.viewModel.items.isLast(item) {
+            if self.viewModel.isPageLoading && self.viewModel.isLast {
                 Divider()
                 Text("Loading...")
                     .padding(.vertical)

@@ -35,3 +35,4 @@ struct RecipeRequestListModel {
         RecipeRequestModel(title: "Pizza", ingridients: "beef,mushroom,chees", query: "pizza")
     ]
 }
+

@@ -9,6 +9,18 @@
 import Foundation
 
 class RootViewModel: ObservableObject {
-    @Published var requests = RecipeRequestListModel()
-    @Published var selectedItem: RecipeRequestModel? = RecipeRequestModel(title: "Omelet", ingridients: "onion,garlic", query: "omelet")
+    private var serviceLocator: ServiceLocator?
+    
+    @Published var requests: RecipeRequestListModel
+    @Published var selectedItem: RecipeRequestModel?
+
+    var recipeViewModel: RecipeViewModel {
+        RecipeViewModel(serviceLocator: self.serviceLocator, recipeRequest: self.selectedItem!)
+    }
+    
+    init(serviceLocator: ServiceLocator?, recipeRequestListModel: RecipeRequestListModel) {
+        self.serviceLocator = serviceLocator
+        self.requests = recipeRequestListModel
+        self.selectedItem = recipeRequestListModel.items.first
+    }
 }

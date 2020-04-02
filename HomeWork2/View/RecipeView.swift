@@ -11,6 +11,8 @@ import RecipePuppyAPI
 import UIComponents
 
 struct RecipeView: View {
+    @EnvironmentObject var serviceLocator: ServiceLocator
+    
     let recipe: Recipe
     
     var body: some View {
@@ -27,7 +29,7 @@ struct RecipeView: View {
                     
                     Spacer()
                     
-                    NavPushButton(destination: RecipeProccessView(viewModel: CookRecipeModel(recipe: self.recipe))) {
+                    NavPushButton(destination: RecipeProccessView(viewModel: CookRecipeModel(serviceLocator: self.serviceLocator, recipe: self.recipe))) {
                         Text("Recipe >")
                             .font(.subheadline)
                             .foregroundColor(.blue)

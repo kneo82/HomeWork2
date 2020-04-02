@@ -20,7 +20,7 @@ struct RecipeListView: View {
         NavigationView {
             List(viewModel.items) { item in
                 VStack(alignment: .leading) {
-                    RowView(viewModel: self.viewModel, item: item)
+                    RowView(viewModel: RowViewModel(recipeViewModel: self.viewModel, item: item))
                         .onAppear() {
                             if self.viewModel.items.isLast(item) {
                                 self.viewModel.loadPage()
@@ -33,13 +33,5 @@ struct RecipeListView: View {
                 self.viewModel.loadPage()
             }
         }
-    }
-}
-
-struct RecipeListView_Previews: PreviewProvider {
-    static private let model = RecipeViewModel(recipeRequest: RecipeRequestModel(title: "Omelet", ingridients: "onion,garlic", query: "omelet"))
-    
-    static var previews: some View {
-        RecipeListView(viewModel: model)
     }
 }

@@ -21,6 +21,10 @@
 		3032FEAA24360CE00021873A /* NutrilonParseApi in Frameworks */ = {isa = PBXBuildFile; productRef = 3032FEA924360CE00021873A /* NutrilonParseApi */; };
 		3032FEAD24360EF00021873A /* RecipePuppyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 3032FEAC24360EF00021873A /* RecipePuppyAPI */; };
 		3032FEB12436287F0021873A /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 3032FEB02436287F0021873A /* UIComponents */; };
+		3032FEBA243672F40021873A /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032FEB9243672F40021873A /* ServiceLocator.swift */; };
+		3032FEBC243673280021873A /* GetRecipeListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032FEBB243673280021873A /* GetRecipeListService.swift */; };
+		3032FEBE243673710021873A /* ParseRecipeServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032FEBD243673710021873A /* ParseRecipeServise.swift */; };
+		3032FEC024367F4F0021873A /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032FEBF24367F4F0021873A /* RowViewModel.swift */; };
 		306C0B66241EACB500AF1559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B65241EACB500AF1559 /* AppDelegate.swift */; };
 		306C0B68241EACB500AF1559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B67241EACB500AF1559 /* SceneDelegate.swift */; };
 		306C0B6A241EACB500AF1559 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C0B69241EACB500AF1559 /* RootView.swift */; };
@@ -45,6 +49,10 @@
 		3032FEA724360BBD0021873A /* NutrilonParseApi */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NutrilonParseApi; path = HomeWork2/API/NutrilonParseApi; sourceTree = SOURCE_ROOT; };
 		3032FEAB24360D890021873A /* RecipePuppyAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RecipePuppyAPI; sourceTree = "<group>"; };
 		3032FEAF2436284B0021873A /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIComponents; sourceTree = "<group>"; };
+		3032FEB9243672F40021873A /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		3032FEBB243673280021873A /* GetRecipeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeListService.swift; sourceTree = "<group>"; };
+		3032FEBD243673710021873A /* ParseRecipeServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseRecipeServise.swift; sourceTree = "<group>"; };
+		3032FEBF24367F4F0021873A /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
 		306C0B62241EACB500AF1559 /* HomeWork2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		306C0B65241EACB500AF1559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		306C0B67241EACB500AF1559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 				30149665241FF89F00E11968 /* RootViewModel.swift */,
 				30149669241FFF3C00E11968 /* RecipeViewModel.swift */,
 				301496F124211A5A00E11968 /* CookRecipeModel.swift */,
+				3032FEBF24367F4F0021873A /* RowViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -103,6 +112,23 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		3032FEB7243672DB0021873A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3032FEBB243673280021873A /* GetRecipeListService.swift */,
+				3032FEBD243673710021873A /* ParseRecipeServise.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3032FEB8243672F40021873A /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				3032FEB9243672F40021873A /* ServiceLocator.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
 		306C0B59241EACB500AF1559 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +151,8 @@
 			children = (
 				306C0B65241EACB500AF1559 /* AppDelegate.swift */,
 				306C0B67241EACB500AF1559 /* SceneDelegate.swift */,
+				3032FEB8243672F40021873A /* ServiceLocator */,
+				3032FEB7243672DB0021873A /* Services */,
 				3032FEAE243627F50021873A /* UIComponents */,
 				3014966F2420007F00E11968 /* Extensions */,
 				306C0B7B241EC5DF00AF1559 /* API */,
@@ -266,13 +294,17 @@
 			files = (
 				30226764242338E3003274C4 /* RecipeImageView.swift in Sources */,
 				306C0B66241EACB500AF1559 /* AppDelegate.swift in Sources */,
+				3032FEBE243673710021873A /* ParseRecipeServise.swift in Sources */,
 				30149668241FFD0B00E11968 /* SelectRequestView.swift in Sources */,
 				300730F5241FEB8200AAFB5B /* RecipeRequestModel.swift in Sources */,
 				30149666241FF89F00E11968 /* RootViewModel.swift in Sources */,
 				306C0B68241EACB500AF1559 /* SceneDelegate.swift in Sources */,
+				3032FEBA243672F40021873A /* ServiceLocator.swift in Sources */,
 				306C0B6A241EACB500AF1559 /* RootView.swift in Sources */,
 				301496712420009D00E11968 /* HelperExtensions.swift in Sources */,
 				301496752420286100E11968 /* RecipeView.swift in Sources */,
+				3032FEC024367F4F0021873A /* RowViewModel.swift in Sources */,
+				3032FEBC243673280021873A /* GetRecipeListService.swift in Sources */,
 				3014966C241FFF8A00E11968 /* RecipeListView.swift in Sources */,
 				3014966E241FFFC000E11968 /* RowView.swift in Sources */,
 				3014966A241FFF3C00E11968 /* RecipeViewModel.swift in Sources */,

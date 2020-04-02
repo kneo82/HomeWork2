@@ -18,7 +18,7 @@ struct RootView: View {
                 SelectRequestView()
                 
                 if (self.viewModel.selectedItem != nil) {
-                    RecipeListView(viewModel: RecipeViewModel(recipeRequest: self.viewModel.selectedItem!))
+                    RecipeListView(viewModel: self.viewModel.recipeViewModel)
                 } else {
                     List {
                         EmptyView()
@@ -26,12 +26,5 @@ struct RootView: View {
                 }
             }
         }
-    }
-}
-
-struct RootView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView()
-            .environmentObject(RootViewModel())
     }
 }

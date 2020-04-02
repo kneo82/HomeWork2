@@ -11,15 +11,15 @@ import NutrilonParseApi
 import RecipePuppyAPI
 
 final class CookRecipeModel: ObservableObject {
-    private let host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-    private let apiKey = "49515c1d30mshbd64ee0fbe44bcep129b4ajsn4601ba0ff3f3"
     
     @Published private(set) var parsedRecipe: ParsedRecipe?
     @Published private(set) var isPageLoading: Bool = false
     
     private let recipe: Recipe
+    private var serviceLocator: ServiceLocator?
     
-    init(recipe: Recipe) {
+    init(serviceLocator: ServiceLocator?, recipe: Recipe) {
+        self.serviceLocator = serviceLocator
         self.recipe = recipe
         self.loadPage()
     }
@@ -31,13 +31,11 @@ final class CookRecipeModel: ObservableObject {
         
         isPageLoading = true
         
-        ParserecipeAPI.getRecipe(requestUrl: recipe.href ?? "",
-                                 xRapidapiHost: host,
-                                 xRapidapiKey: apiKey) { responce, error in
-                                    if let result = responce {
-                                        self.parsedRecipe = result
-                                        self.isPageLoading = false
-                                    }
+        if let service = serviceLocator?.getServiceOf(ParseRecipeServise.self)  {
+            service.parseRecipe(recipyURL: recipe.href ?? "", handler: { [weak self] parsedRecipe in
+                self?.parsedRecipe = parsedRecipe
+                self?.isPageLoading = false
+            })
         }
     }
 }
