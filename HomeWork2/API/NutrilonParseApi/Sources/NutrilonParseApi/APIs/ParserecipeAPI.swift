@@ -19,7 +19,7 @@ open class ParserecipeAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getRecipe(requestUrl: String, xRapidapiHost: String? = nil, xRapidapiKey: String? = nil, apiResponseQueue: DispatchQueue = NutrilonOpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: ParsedRecipe?,_ error: Error?) -> Void)) {
+    open class func getRecipe(requestUrl: String, xRapidapiHost: String? = nil, xRapidapiKey: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: ParsedRecipe?,_ error: Error?) -> Void)) {
         getRecipeWithRequestBuilder(requestUrl: requestUrl, xRapidapiHost: xRapidapiHost, xRapidapiKey: xRapidapiKey).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -40,7 +40,7 @@ open class ParserecipeAPI {
      */
     open class func getRecipeWithRequestBuilder(requestUrl: String, xRapidapiHost: String? = nil, xRapidapiKey: String? = nil) -> RequestBuilder<ParsedRecipe> {
         let path = "/recipes/extract"
-        let URLString = NutrilonOpenAPIClientAPI.basePath + path
+        let URLString = OpenAPIClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -53,7 +53,7 @@ open class ParserecipeAPI {
         ]
         let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
 
-        let requestBuilder: RequestBuilder<ParsedRecipe>.Type = NutrilonOpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<ParsedRecipe>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false, headers: headerParameters)
     }

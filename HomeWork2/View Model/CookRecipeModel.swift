@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import NutrilonParseApi
+import RecipePuppyAPI
 
 final class CookRecipeModel: ObservableObject {
     private let host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"

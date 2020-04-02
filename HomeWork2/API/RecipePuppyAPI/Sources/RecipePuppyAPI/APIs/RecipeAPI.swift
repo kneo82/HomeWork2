@@ -19,7 +19,7 @@ open class RecipeAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getRecipe(i: String, q: String, p: Int, apiResponseQueue: DispatchQueue = RecipepuppyOpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: RecipeList?,_ error: Error?) -> Void)) {
+    open class func getRecipe(i: String, q: String, p: Int, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: RecipeList?,_ error: Error?) -> Void)) {
         getRecipeWithRequestBuilder(i: i, q: q, p: p).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -40,7 +40,7 @@ open class RecipeAPI {
      */
     open class func getRecipeWithRequestBuilder(i: String, q: String, p: Int) -> RequestBuilder<RecipeList> {
         let path = "/api/"
-        let URLString = RecipepuppyOpenAPIClientAPI.basePath + path
+        let URLString = OpenAPIClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -50,7 +50,7 @@ open class RecipeAPI {
             "p": p.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<RecipeList>.Type = RecipepuppyOpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<RecipeList>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

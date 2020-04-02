@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import RecipePuppyAPI
 
 struct RowView: View {
     @ObservedObject var viewModel: RecipeViewModel

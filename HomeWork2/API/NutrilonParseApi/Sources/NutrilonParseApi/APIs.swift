@@ -9,7 +9,7 @@
 import Foundation
 
 open class OpenAPIClientAPI {
-    public static var basePath = ""
+    public static var basePath = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = [:]
     public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()

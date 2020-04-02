@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import RecipePuppyAPI
 
 struct RecipeView: View {
     let recipe: Recipe

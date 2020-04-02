@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import RecipePuppyAPI
 
 extension Recipe: Identifiable {
     public var id: String {
